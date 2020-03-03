@@ -18,8 +18,11 @@ body{
 }
 
 .add-item{
+    display: flex;
+    background: lightblue;
+}
+.add-item imput{
     flex-grow: 1;
-    background: purple;
 }
 .todo{
     flex-grow: 1;
