@@ -1,34 +1,39 @@
 *{
     box-sizing: border-box;
 }
-div {
-    border: 1px solid blueviolet;
-    padding: ;
+div{
+    border: 1px solid blue;
+    padding: 3px;
+}
+body{
+    margin: 0;
+    padding: 0;
+
 }
 html,
 body{
-    padding: 0;
-    margin: 0;
-}
-body{
-    display:flex;
-    border: 1px solid red;
-    height: 100vh;
+    display: flex;
     flex-direction: column;
+    background: purple;
+    height: 100vh;
 }
 
-.add-item{
+.add-item {
+    /* flex-grow: 1; */
     display: flex;
-    background: lightblue;
+    background:purple;
 }
-.add-item imput{
+
+.add-item input{
     flex-grow: 1;
 }
+
 .todo{
     flex-grow: 1;
-    background: royalblue;
-}
+    background:rgb(104, 47, 131);
+} 
+
 .done{
     flex-grow: 1;
-    background: slateblue;
+    background: blue;
 }
