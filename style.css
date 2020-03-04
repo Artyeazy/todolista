@@ -14,26 +14,27 @@ html,
 body{
     display: flex;
     flex-direction: column;
-    background: purple;
+    background: lightpink;
     height: 100vh;
 }
 
 .add-item {
     /* flex-grow: 1; */
     display: flex;
-    background:purple;
+    background: lightgreen;
 }
 
 .add-item input{
+    align-self: center;
     flex-grow: 1;
 }
 
 .todo{
-    flex-grow: 1;
-    background:rgb(104, 47, 131);
+    
+    background:lightskyblue;
 } 
 
 .done{
-    flex-grow: 1;
-    background: blue;
+    
+    background:lightyellow;
 }
