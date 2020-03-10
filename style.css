@@ -1,0 +1,142 @@
+:root {
+    --border: 1px solid #00000011;
+    --additem-bkcolor: #00000006
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #656565;
+    outline: none;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.add-item {
+    display: flex;
+    border-radius: 4px;
+    margin: .5em;
+    border: var(--border);
+    background: var(--additem-bkcolor);
+    overflow: hidden;
+}
+
+.add-item input {
+    flex-grow: 1;
+    padding: .5em;
+    border: 0 none;
+    background: transparent;
+}
+
+.add-item input:focus {
+    background: #d4d4d4;
+}
+
+.add-item button {
+    border: 0 none;
+    background: var(--additem-bkcolor);
+    cursor: pointer;
+}
+
+.add-item button:hover {
+    background: #CCCCCC ;
+}
+
+.todo {
+    flex-grow: 1;
+}
+
+.done {
+    flex-grow: 1;
+}
+
+.item {
+    display: flex;
+    border: var(--border);
+    background: var(--additem-bkcolor);
+    margin: .5em;
+    border-radius: 4px;
+    padding: .5em;
+}
+
+.item input {
+    display: none;
+}
+
+.item input+.check {
+    border-radius: 3px;
+    cursor: pointer;
+    background: transparent;
+    border: 1.5px solid #656565;
+    height: 1.25em;
+    width: 1.25em;
+    position: relative;
+    transition: .3s;
+}
+
+.item input+.check:after,
+.item input+.check:before {
+    content: " ";
+    background: #656565;
+    width: 2px;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: calc(50% - 1px);
+    transition: .3s;
+    --rotate: 0deg;
+    --transX: 0em;
+    --transY: 0em;
+    transform:
+        rotate(var(--rotate)) translateX(var(--transX)) translateY(var(--transY));
+}
+
+.item input+.check:before {
+    --rotate: -45deg;
+}
+
+.item input+.check:after {
+    --rotate: 45deg;
+}
+
+.item input:checked+.check {
+    border-color: #009688;
+    background: #009688;
+}
+
+.item input:checked+.check:before {
+    background-color: #FFFFFF;
+    height: 55%;
+    --transX: -.35em;
+}
+
+.item input:checked+.check:after {
+    background-color: #FFFFFF;
+    height: 70%;
+    --transX: .18em;
+    --transY: -.1em;
+}
+
+.item p {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.done {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.done .item p {
+    text-decoration: line-through;
+}
